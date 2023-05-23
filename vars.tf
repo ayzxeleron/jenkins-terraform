@@ -12,25 +12,25 @@ variable "ssh_key" {
 ##VM that will be created.
 variable "virtual_machines" {
     default = {
-        "dbaas-vm1" = {
-      hostname = "dbaas-vm1"
-            vmid = 9990
+        "dbaas-vm10" = {
+      hostname = "dbaas-vm10"
+            vmid = 99910
             target_node = "pve-stg-01",
             cpu_cores = 2,
             cpu_sockets = 1,
             memory = "2048",
             hdd_size = "18G",
-            template_name = "ubuntu22-base",
+            template_name = "ubuntu22",
         },
-        "dbaas-vm2" = {
-      hostname = "dbaas-vm2"
-            vmid = 9991
+        "dbaas-vm11" = {
+      hostname = "dbaas-vm11"
+            vmid = 99911
             target_node = "pve-stg-01",
             cpu_cores = 2,
             cpu_sockets = 1,
             memory = "2048",
             hdd_size = "18G",
-            template_name = "ubuntu22-base",
+            template_name = "ubuntu22",
         },
     }
 }
