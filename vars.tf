@@ -10,27 +10,30 @@ variable "ssh_key" {
 
 
 ##VM that will be created.
+#static ganti ipconfig0 ="dhcp",
 variable "virtual_machines" {
     default = {
-        "dbaas-vm10" = {
-      hostname = "dbaas-vm10"
-            vmid = 99910
+        "firecracker-dbaas" = {
+      hostname = "firecracker-dbaas"
+            vmid = 9991
             target_node = "pve-stg-01",
-            cpu_cores = 2,
+            cpu_cores = 8,
             cpu_sockets = 1,
-            memory = "2048",
-            hdd_size = "18G",
+            memory = "8129",
+            hdd_size = "30G",
             template_name = "ubuntu22",
+            ipconfig0 = "ip=10.10.10.210/24,gw=10.10.10.254",
         },
-        "dbaas-vm11" = {
-      hostname = "dbaas-vm11"
-            vmid = 99911
-            target_node = "pve-stg-01",
-            cpu_cores = 2,
-            cpu_sockets = 1,
-            memory = "2048",
-            hdd_size = "18G",
-            template_name = "ubuntu22",
-        },
+#        "dbaas-vm13" = {
+#      hostname = "dbaas-vm13"
+#            vmid = 99913
+#            target_node = "pve-stg-01",
+#            cpu_cores = 2,
+##            cpu_sockets = 1,
+#            memory = "2048",
+#            hdd_size = "18G",
+#            template_name = "ubuntu22",
+#            ipconfig0 = "ip=10.10.10.213/24,gw=10.10.10.254",
+#        },
     }
 }

@@ -52,6 +52,7 @@ resource "proxmox_vm_qemu" "cloudinit" {
    }
 
    # Cloud-init config
-   ipconfig0 = "ip=dhcp"
+#   ipconfig0 = "ip=dhcp" 	
+   ipconfig0 = each.value.ipconfig0
    sshkeys = var.ssh_key
 }
